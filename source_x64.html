@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+		<link href="./style.css" rel="stylesheet"/>
+		<link href="./source_x64.css" rel="stylesheet"/>
+	</head>
+	<body>
+		<div class="fl cl gw g30 il">
+			<div class="fl rw alc jtc g10 header"><h1>SRCDS x86_64 Modding Support</h1></div>
+			<div>This page is here to compile and track x86_64 modding support by Metamod & Sourcemod. As of writing, October 4th 2024,
+				Team Fortress 2 & Counter Strike 2 are the primary games <a href="https://forums.alliedmods.net/">AlliedModders</a> aims to bring full modding support for. The work can be loosely decomposed into three parts, which you'll find below.
+			</div>
+			<div>
+				<table class="def">
+					<thead>
+						<tr>
+							<td>Mark</td>
+							<td>Definition</td>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td><check/></td>
+							<td>Full support has been achieved. No more work is required except for the eventual maintenance that can arise from game updates.</td>
+						</tr>
+						<tr>
+							<td><warning/></td>
+							<td>Partial support has been achieved. However we're still quite far from completion. Missing features, missing reverse engineering work, missing code.</td>
+						</tr>
+						<tr>
+							<td><cross/></td>
+							<td>No support. Work hasn't started, or just started. It will likely take a long time before full support is achieved.</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<h1>Source SDK</h1>
+			<div>
+				AlliedModders hosts its own set of modified Source SDKs in order to bring modding support for the various Source 1/2 based games. They can be found hosted on GitHub <a href="https://github.com/alliedmodders/hl2sdk">here</a>, each branch represents a game or collection of ones. Below you can find a list of the current state of support for the primary games.
+			</div>
+			<div>
+				<table>
+					<thead>
+						<tr>
+							<td>Game</td>
+							<td>Windows</td>
+							<td>Linux</td>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td><span><img src="./tf2.svg" />Team Fortress 2</span></td>
+							<td><check/></td>
+							<td><check/></td>
+						</tr>
+						<tr>
+							<td>N/A</td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td><span><img src="./cs2.webp" />Counter Strike 2</span></td>
+							<td><warning /></td>
+							<td><warning /></td>
+						</tr>
+						<tr>
+							<td>ConVar</td>
+							<td><cross><a href="https://github.com/alliedmodders/hl2sdk/pull/154">PR#154</a></cross></td>
+							<td><cross><a href="https://github.com/alliedmodders/hl2sdk/pull/154">PR#154</a></cross></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<h1>Metamod</h1>
+			<div>
+				Rephrasing what's written on the official website. Metamod sits as the mechanism between server plugins and the srcds, in order to provide a unified hooking interface called SourceHooks. It streamlines the process of loading and unloading server plugins, and severely decreases the chances of multiple server plugins conflicting.
+			</div>
+			<div>
+				<table>
+					<thead>
+						<tr>
+							<td>Module</td>
+							<td>Windows</td>
+							<td>Linux</td>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Source Loader</td>
+							<td><check/></td>
+							<td><check/></td>
+						</tr>
+						<tr>
+							<td>SourceHook</td>
+							<td><check/></td>
+							<td><check/></td>
+						</tr>
+						<tr>
+							<td>SourceHook - (Stub Generator)</td>
+							<td><check /></td>
+							<td><cross /></td>
+						</tr>
+						<tr>
+							<td><span><img src="./cs2.webp" />Counter Strike 2 - Module</span></td>
+							<td>Windows</td>
+							<td>Linux</td>
+						</tr>
+						<tr>
+							<td>Command/ConVar tracking</td>
+							<td><cross /></td>
+							<td><cross /></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<h1>SourceMod</h1>
+			<div>
+				SourceMod is a metamod (server) plugin that aims to expose the various game functions as well as third-parties libraries like MySQL or CURL, to a set of plugins hosted in a sandbox environment. It is the primary framework of choice when wanting to mod the srcds in a safe manner in order to provide extra functionalities such as 'admins/moderators' or 'ban database'. Below is the current state of support.
+			</div>
+			<div>
+				<table>
+					<thead>
+						<tr>
+							<td>Game</td>
+							<td>Windows</td>
+							<td>Linux</td>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td><span><img src="./cs2.webp" />Counter Strike 2</span></td>
+							<td><cross>No support anytime soon</cross></td>
+							<td><cross>No support anytime soon</cross></td>
+						</tr>
+						<tr>
+							<td><span><img src="./tf2.svg" />Team Fortress 2</span></td>
+							<td><check>Nearly Complete (Awaiting PR Merge)</check></td>
+							<td><warning /></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div>
+				<table>
+					<thead>
+						<tr>
+							<td>Individual Module</td>
+							<td>Windows</td>
+							<td>Linux</td>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td><span><img src="./cs2.webp" />Counter Strike 2</span></td>
+							<td><cross /></td>
+							<td><cross /></td>
+						</tr>
+						<tr>
+							<td><span><img src="./tf2.svg" />Team Fortress 2</span></td>
+							<td><check/></td>
+							<td><check/></td>
+						</tr>
+						<tr>
+							<td>Core</td>
+							<td><check/></td>
+							<td><check/></td>
+						</tr>
+						<tr>
+							<td>Bintools</td>
+							<td><check/></td>
+							<td><check/></td>
+						</tr>
+						<tr>
+							<td>ClientPrefs</td>
+							<td><check/></td>
+							<td><check/></td>
+						</tr>
+						<tr>
+							<td>Curl</td>
+							<td><check/></td>
+							<td><check/></td>
+						</tr>
+						<tr>
+							<td>DHooks</td>
+							<td><warning><a href="https://github.com/alliedmodders/sourcemod/pull/2205">PR#2205</a></warning></td>
+							<td><cross/></td>
+						</tr>
+						<tr>
+							<td>GeoIP</td>
+							<td><check/></td>
+							<td><check/></td>
+						</tr>
+						<tr>
+							<td>MySQL</td>
+							<td><check/></td>
+							<td><check/></td>
+						</tr>
+						<tr>
+							<td>PGSQL</td>
+							<td><check/></td>
+							<td><check/></td>
+						</tr>
+						<tr>
+							<td>SDKHooks</td>
+							<td><check/></td>
+							<td><check/></td>
+						</tr>
+						<tr>
+							<td>SDKTools</td>
+							<td><warning><a href="https://github.com/alliedmodders/sourcemod/pull/2196">PR#2196</a></warning></td>
+							<td><warning><a href="https://github.com/alliedmodders/sourcemod/pull/2196">PR#2196</a></warning></td>
+						</tr>
+						<tr>
+							<td>SQLite</td>
+							<td><check/></td>
+							<td><check/></td>
+						</tr>
+						<tr>
+							<td>TopMenus</td>
+							<td><check/></td>
+							<td><check/></td>
+						</tr>
+						<tr>
+							<td>Updater</td>
+							<td><check/></td>
+							<td><check/></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<h1>SourceMod - (Third-Party Extensions/Plugins)</h1>
+			<div>
+				SourceMod plugin API can be extended (hence extensions) by third-parties libraries. Below is an abitrary list of extensions/plugins that are assumed to be well used by SourcePawn plugins developpers.
+			</div>
+			<div>
+				<table>
+					<thead>
+						<tr>
+							<td>Name</td>
+							<td>Windows</td>
+							<td>Linux</td>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td><span><img src="./tf2.svg" /><a href="https://github.com/asherkin/TF2Items">TF2Items</a></span></td>
+							<td><cross/></td>
+							<td><cross/></td>
+						</tr>
+						<tr>
+							<td><span><img src="./tf2.svg" /><a href="https://github.com/FlaminSarge/tf2attributes">TF2Attributes</a></span></td>
+							<td><cross/></td>
+							<td><cross/></td>
+						</tr>
+						<tr>
+							<td><a href="https://github.com/asherkin/accelerator">Accelerator</a></td>
+							<td><cross><a href="https://github.com/asherkin/accelerator/pull/13">PR#13</a></cross></td>
+							<td><cross><a href="https://github.com/asherkin/accelerator/pull/13">PR#13</a></cross></td>
+						</tr>
+						<tr>
+							<td><a href="https://github.com/asherkin/connect">Connect</a></td>
+							<td><check/></td>
+							<td><check/></td>
+						</tr>
+						<tr>
+							<td><a href="https://github.com/accelerator74/Cleaner">Cleaner</a></td>
+							<td><cross/></td>
+							<td><cross/></td>
+						</tr>
+						<tr>
+							<td><a href="https://github.com/SouthernCrossGaming/SteamWorks">SteamWorks</a></td>
+							<td><check/></td>
+							<td><check/></td>
+						</tr>
+						<tr>
+							<td><a href="https://github.com/peace-maker/sourcetvmanager">SourceTV Manager</a></td>
+							<td><cross/></td>
+							<td><cross/></td>
+						</tr>
+						<tr>
+							<td><a href="https://github.com/JoinedSenses/sm-ext-socket">Socket</a></td>
+							<td><cross><a href="https://github.com/JoinedSenses/sm-ext-socket/pull/6">PR#6</a></cross></td>
+							<td><cross><a href="https://github.com/JoinedSenses/sm-ext-socket/pull/6">PR#6</a></cross></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,132 @@
+html, body {
+	margin: 0;
+	padding: 0;
+	position: absolute;
+}
+
+body {
+	background-color: rgb(95, 95, 95);
+	color:rgb(252, 252, 252);
+	font-family: "Ubuntu Mono", monospace;
+	text-align: justify;
+
+	width: 90vw;
+	padding-left: 5vw;
+}
+
+a,a:visited {
+	color: #24b5ee;
+}
+
+table {
+	text-align: center;
+	font-size: 1em;
+
+	img {
+		width: 1.3em;
+		height: 1.3em;
+	}
+
+	td {
+		* {
+			display: flex;
+			gap: 0.5em;
+			flex-direction: row;
+			align-items: center;
+			justify-content: center;
+		}
+
+		>check::before {
+			content: '✓';
+			font-size: 1.3em;
+			color: rgb(0, 230, 115);
+		}
+
+		>warning::before {
+			content: '⚠';
+			font-size: 1.3em;
+			color:rgb(255, 196, 0);
+		}
+
+		>cross::before {
+			content: '✘';
+			font-size: 1.3em;
+			color:rgb(255, 20, 20);
+		}
+	}
+
+	td {
+		padding-left: 1em;
+		padding-right: 1em;
+	}
+
+	tr:nth-child(odd) {
+		background-color: #414141;
+	}
+
+	tr:nth-child(even) {
+		background-color: #242424;
+	}
+
+	>thead {
+		font-size: 1.3em;
+		font-weight: 800;
+
+		img {
+			width: 1.6em;
+			height: 1.6em;
+		}
+	}
+
+	>tbody {
+		>tr {
+			>td:first-child {
+				text-align: start;
+
+				* {
+					justify-content: start;
+				}
+			}
+		}
+	}
+}
+
+.fl {
+	display: flex;
+}
+
+.fl.il {
+	display: inline-flex;
+}
+
+.fl.gw {
+	flex: 1;
+}
+
+.fl.cl {
+	flex-direction: column;
+}
+
+.fl.rw {
+	flex-direction: row;
+}
+
+.fl.alc {
+	align-items: center;
+}
+
+.fl.jtc {
+	justify-items: center;
+}
+
+.fl.g10 {
+	gap: 10px;
+}
+
+.fl.g20 {
+	gap: 20px;
+}
+
+.fl.g30 {
+	gap: 30px;
+}
